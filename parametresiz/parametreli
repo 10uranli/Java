@@ -1,0 +1,48 @@
+//paremetresiz
+public class parametresizMetot {
+
+	public static void imza(){
+System.out.println("onur anli");
+	}
+public static void main(String[] args){
+	System.out.println("adres");
+	imza();//silersek sadece main metotunun printi yazılır.
+}
+}
+----------------------------------------------------------
+//parametreli
+import java.util.*;
+class değeralan{
+	public static void main(String[] args){
+		Scanner nesne=new Scanner(System.in);
+		System.out.print("ilk sayi:");
+		float girdi=nesne.nextFloat();
+		System.out.print("ikinci sayi:");
+		float girdi2=nesne.nextFloat();
+		ortalama(girdi,girdi2);
+		
+	}
+		public static float ortalama(float a,float b){
+	
+			float ort=(a+b)/2;
+			System.out.println("ortalama="+ort);
+					return ort;
+		}
+}
+------------------------------------------
+//paremetreli 2
+
+public class parametreliMetot{
+	public static void main(String[] args){
+		System.out.println("4 ile 6 nin ortalamasi");
+		ortala(4,6);
+	}
+
+public static int ortala(int a,int b){
+int t;
+t=(a+b)/2;
+System.out.println(t);
+return t;
+}
+
+}
