@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class denemeee {
+public static void main(String[] args){
+	int i=20;
+	for( ; ; ){
+		System.out.println("tahminin:");
+		Scanner nesne=new Scanner(System.in);
+		int girilecek=nesne.nextInt();
+		if(girilecek!=i){
+			System.out.println("tahmin yanlış");
+		}
+		else 
+		{
+			System.out.println("tahmin doğru");
+			break;
+		}
+	}
+}
+}
