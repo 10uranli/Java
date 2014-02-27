@@ -1,0 +1,73 @@
+//elaman yazdırma
+
+public class diziler {
+	public static void main(String[] args){
+		Object dizi[]=new Object[3];
+		dizi[0]="onur";
+		dizi[1]=2;
+		dizi[2]=444.3;
+		for(int i=0;i<3;i++){
+			System.out.println((i+1)+"."+"eleman:"+dizi[i]);
+		}
+	}
+
+}
+---------------------------------------------------------------------------
+//public class diziler2 {
+	public static void main(String[] args) {
+	double[] d={2.1,3.4,4.6,1.1,0.11};
+	String[] s={"ali","gs","kitap", "kalem"};
+	for(int i=0;i<d.length;i++){
+		System.out.println("d["+i+"]="+d[i]);
+	}
+	for(int x=0;x<s.length;x++){
+		System.out.println("s["+x+"]="+s[x]);
+	
+          }
+	}
+
+}
+-------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+ 
+public class dizitoplama {
+	public static void main(String[] args) {
+		System.out.println("Kaç adet sayiyi toplayacaksin ?");
+		Scanner s = new Scanner(System.in);
+		int sayi = s.nextInt();
+		
+		int dizi[]= new int[sayi];
+ 
+		for (int i=0;i<sayi;i++){
+			System.out.println((i+1)+". elemani giriniz");
+			Scanner d = new Scanner(System.in);
+			int deger = d.nextInt();
+			
+			dizi[i]=deger;
+		}
+		
+		topla(dizi);
+	}
+	
+	public static void topla(int dizi[]){
+		int toplam=0;
+		for (int i=0;i<dizi.length;i++){
+			toplam=toplam+dizi[i];
+		}
+		System.out.println("Dizi elemanlarinin toplami = "+toplam);
+	}
+}
+----------------------------------------------------------------
+//dizi kopyalama
+public class dizicopy {
+	public static void main(String[] args){
+		Object[] dizi1={"ali"};
+		Object dizi2[]=new Object[1];
+		System.out.println(dizi1);
+		System.out.println(dizi2);
+		System.arraycopy(dizi1,0,dizi2,0,1);
+		System.out.println(dizi2);	}
+	
+
+}
