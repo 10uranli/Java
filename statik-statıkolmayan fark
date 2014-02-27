@@ -1,0 +1,28 @@
+//statik
+public class statıkolan {
+	public static int ortala(int a,int b){
+		int t;
+		t=(a+b)/2;
+				System.out.println(t);
+		return t;
+	}
+	public static void main(String[] args) {
+		ortala(5,7);
+	}
+
+}
+//statık olmayan
+public class statıkolmayan {
+	public int ortala(int a,int b){
+		int t;
+		t=(a+b)/2;
+				System.out.println(t);
+		return t;
+	}
+	public static void main(String[] args) {
+
+		statıkolmayan nesne=new statıkolmayan();
+		nesne.ortala(5,7);
+	}
+
+}
