@@ -1,0 +1,23 @@
+class kare{
+ 
+public int kenar;
+public int cevre;
+public int alan;
+//yapıcı metodumuzu void anahtar kelimesiyle ile oluşturduk. Void ile bir return döndürmemize gerek yoktur.
+public void hesapla(kare k) {
+System.out.println("karenin kenarı   : " + k.kenar);
+System.out.println("karenin alani      : " + k.alan);
+System.out.println("karenin cevresi    : " + k.cevre);
+};
+//aşağıda kare yapıcı metodumuzu oluşturuyoruz. k değişkenini kenara atıyoruz.
+public kare(int k) {
+kenar = k;
+alan =k*k;
+cevre = 4*k;
+};
+ 
+public static void main(String args[]) {
+kare k1 = new kare(5);   // kare sınıfına nesne oluşturuyoruz. Buradaki 5 aslında k değişkenimize yani kenarımıza atanıyor.
+k1.hesapla(k1);             // Bu nesne sayesinde hesapla metodumuzu çağırıyoruz.
+}
+}
