@@ -1,0 +1,111 @@
+import java.util.*;
+public class gauss_indirgeme
+{
+   
+    private int[][] m;    
+    private int[] constants; 
+    private int[] solution; 
+    private int numEq;      
+    static Scanner sc=new Scanner(System.in);
+    
+    public gauss_indirgeme(int equations)   
+    {
+        numEq=equations;
+        m=new int[numEq][numEq];
+        constants=new int[numEq];
+        solution=new int[numEq];
+    }
+    
+    public void fillMatrix()
+    {
+        for(int i=0;i<numEq;i++){
+            System.out.println("satir: "+(i+1)+" :");
+            for(int j=0;j<numEq;j++){
+                System.out.print("değişken "+(j+1)+" : ");
+                m[i][j]=sc.nextInt();
+            }
+            System.out.print("sonucu giriniz : ");
+            constants[i]=sc.nextInt();
+        }
+    }
+    
+    public void printSolution()
+    {
+        System.out.println("\nDeğişken değerleri : ");
+        for(int i=0;i<numEq;i++)
+            System.out.println((char)('A'+i)+" = "+solution[i]);
+    }
+    
+    public void printMatrix()  
+    {
+        for(int i=0;i<numEq;i++){
+            for(int j=0;j<numEq;j++){
+                if(m[i][j]>=0)
+                    System.out.print(" +"+m[i][j]+((char)('A'+j))+" ");
+                else if(m[i][j]<0)
+                    System.out.print(" "+m[i][j]+((char)('A'+j))+" ");
+            }
+            System.out.println(" = "+constants[i]);
+        }
+    }
+    
+    public void swapRows(int row1,int row2)
+    {
+        int temp;
+        for(int j=0;j<numEq;j++){ 
+            temp=m[row1][j];
+            m[row1][j]=m[row2][j];
+            m[row2][j]=temp;
+        }
+        temp=constants[row1];   
+        constants[row1]=constants[row2];
+        constants[row2]=temp;
+    }
+    
+    public void eliminate()
+    {
+        int i,j,k,l;
+        for(i=0;i<numEq;i++){   
+            int largest=Math.abs(m[i][i]);
+            int index=i;
+            for(j=i+1;j<numEq;j++){
+                if(Math.abs(m[j][i])>largest){
+                    largest=m[j][i];
+                    index=j;
+                }
+            }
+            swapRows(i,index); 
+            for(k=i+1;k<numEq;k++){
+                int factor=m[k][i]/m[i][i];
+               
+                for(l=i;l<numEq;l++){
+                    m[k][l]-=factor*m[i][l];
+                }
+                constants[k]-=factor*constants[i]; 
+            }
+        }
+    }
+    
+    public void solve()
+    {
+        for(int i=numEq-1;i>=0;i--){
+            solution[i]=constants[i];  
+            for(int j=numEq-1;j>i;j--){
+                solution[i]-=m[i][j]*solution[j];
+            }
+            solution[i]/=m[i][i];
+        }
+    }
+    
+    public static void main(String args[])
+    {
+        System.out.print("değişken sayisi: ");
+        gauss_indirgeme obj=new gauss_indirgeme(sc.nextInt());
+        obj.fillMatrix();
+        System.out.println("\fYou Have Entered The Following Equations :");
+        obj.printMatrix();
+        obj.eliminate();
+        obj.solve();
+        obj.printSolution();
+    }
+}
