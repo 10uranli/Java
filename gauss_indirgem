@@ -1,3 +1,4 @@
+
 import java.util.*;
 public class gauss_indirgeme
 {
@@ -109,3 +110,4 @@ public class gauss_indirgeme
         obj.printSolution();
     }
 }
+//Kod bana ait değildir.Örnek olarak konulmuştur.
