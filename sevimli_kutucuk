@@ -1,0 +1,7 @@
+import  javax.swing.JOptionPane;//JOption yerine * yazarsak swing paketının tum sınıflarını kullanabılırız
+
+public class kutucikarma{
+	public static void main(String[] args){
+		JOptionPane.showMessageDialog(null,"selamünaleyküm","baslik",JOptionPane.OK_OPTION);
+	}
+}
