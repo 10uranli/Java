@@ -1,0 +1,9 @@
+
+public class forÖrnek {
+public static void main(String[] args){
+	for(int i=0,j=0;i<=5;i++,j++){
+		i*=j;
+		System.out.println("i nin değeri:"+i+" j nin değeri"+j);
+	}
+}
+}
