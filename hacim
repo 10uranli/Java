@@ -1,0 +1,51 @@
+import java.awt.Window;
+import java.util.Scanner;
+ 
+ 
+public class Kutu {
+	static int en;
+	static int boy;
+	static double yukseklik, hacim;
+	boolean durum =true;
+	public double hacimBul(int  x, int y, double z){
+		kontrolEt(en, boy, yukseklik);
+		if(durum == true){ 
+		hacim = x *y * z;
+		return hacim;
+		
+		
+		}
+		else{
+			kullanicidanAl();
+			hacimBul(en, boy, yukseklik);
+			return 0;
+		}
+	}
+	public void kullanicidanAl(){
+		Scanner tara = new Scanner(System.in);
+		System.out.println("En boy yukseklik girin: ");
+		en = tara.nextInt();
+		boy = tara.nextInt();
+		yukseklik = tara.nextDouble();
+	}
+	public void ekranaYaz(double hacim){
+		System.out.println("hacim : "+ hacim);
+	}
+	public static void main(String args[]){
+		Kutu k =  new  Kutu();
+		k.kullanicidanAl();
+		k.hacimBul(en, boy, yukseklik);
+		k.ekranaYaz(hacim);
+		
+	}
+	public void kontrolEt(int a, int b, double c){
+		if(a<0 | b <0 | c < 0){
+			System.out.println("negatif deger girilemez. ");
+			durum = false;
+			
+		}
+		else{
+			durum = true;
+		}
+	}
+}
