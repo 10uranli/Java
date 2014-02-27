@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class vizeFinal {
+public static void main(String[] args) {
+	int sonuc;
+	Scanner nesne=new Scanner(System.in);
+	System.out.println("Vize notunuzu giriniz:");
+	int deger1=nesne.nextInt();
+	System.out.println("Final notunuzu giriniz:");
+	int deger2=nesne.nextInt();
+	
+	sonuc=deger1*4/10+deger2*6/10;
+	
+	if (sonuc>=60)
+	{
+		System.out.println("tebrikler"+sonuc+ " ile gectiniz");
+		
+	}
+	else 
+	{
+		System.out.println("maalesef "+sonuc+" ile kaldiniz");
+		}
+	}
+}
