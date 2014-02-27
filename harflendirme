@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class ifkullanimi {
+	public static void main(String[] args) {
+		Scanner nesneadi=new Scanner(System.in);
+		System.out.println("notunuzu giriniz:");
+		int deger=nesneadi.nextInt();
+		if (deger>=85)
+			System.out.println ("AA");
+		else if(deger>=75 && deger<85)
+		System.out.println("BA");
+		else if(deger>=65 && deger<75)
+			System.out.println("BB");
+		else if(deger>=55 && deger<65)
+			System.out.println("CB");
+		else if(deger>=45 && deger<55)
+			System.out.println("CC");
+		else if(deger<45)
+			System.out.println("FF");
+		
+	}
+
+} // Sınırlar rasg
